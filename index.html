@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Drum 🥁Kit</h1>
+    <div class="main">
+        <button class="drum" id="w">w</button>
+        <button class="drum" id="a">a</button>
+        <button class="drum" id="s">s</button>
+        <button class="drum" id="d">d</button>
+        <button class="drum" id="j">j</button>
+        <button class="drum" id="k">k</button>
+        <button class="drum" id="l">l</button>
+    </div>
+
+    <script>
+        let button = document.getElementsByClassName("drum")
+
+        for(let i=0; i<button.length; i++){
+            button[i].addEventListener("click", ()=>{
+                playSound(button[i].innerHTML)
+            })
+        }
+
+        document.addEventListener('keypress', function (event){
+            playSound(event.key)
+        })
+
+        function playSound(key){
+            if(key == "w"){
+                const audio = new Audio("sounds/crash.mp3")
+                audio.play()
+            }else if(key == "a"){
+                const audio = new Audio("sounds/buzzer.mp3")
+                audio.play()
+            }else if(key == "s"){
+                const audio = new Audio("sounds/buzz.mp3")
+                audio.play()
+            }else if(key == "d"){
+                const audio = new Audio("sounds/crock.mp3")
+                audio.play()
+            }else if(key == "j"){
+                const audio = new Audio("sounds/snare.mp3")
+                audio.play()
+            }else if(key == "k"){
+                const audio = new Audio("sounds/pin.mp3")
+                audio.play()
+            }else if(key == "l"){
+                const audio = new Audio("sounds/kick-bass.mp3")
+                audio.play()
+            }
+        }
+    </script>
+</body>
+</html>
